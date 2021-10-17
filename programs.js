@@ -45,7 +45,7 @@ var num2 = 35;
 var num3 = 100;
 if (num1 > num2 && num1 > num3)
     console.log("num1 is the largest number");
-else if (num2 > num1 && num2 > num3)
+else if (num2 > num3)
     console.log("num2 is the largest number");
 else
     console.log("num3 is the largest number");
@@ -67,9 +67,8 @@ if (year % 4 == 0) {
 
 var num = 7;
 var first = 1;
-var i;
 
-for (i = 1; i <= num; i++)
+for (var i = 1; i <= num; i++)
     first = first * i;
 
 console.log("Factorial is " + first);
@@ -145,3 +144,84 @@ while (n1 / 10 >= 1) {
     ++num;
 }
 console.log("Number of digits= ", num);
+
+//Reverse a number
+
+function reverse(n) {
+    var arr = [];
+    var reverse = 0;
+    while (n > 0)
+        (arr.push(n % 10), n = Math.floor(n / 10));
+    while (arr.length)
+        reverse = reverse * 10 + arr.shift();
+    return reverse;
+}
+
+console.log(reverse(12345678))
+
+//Calculate the Power of a Number
+
+var b = 10;
+var e = 3;
+var r = 1;
+var i = 1;
+while (i <= e) {
+    r *= b;
+    i++;
+}
+console.log("power is ", r)
+
+//Check Whether a Number is Palindrome or Not
+
+var rem, temp, final = 0;
+var number = 151;
+temp = number;
+while (number > 0) {
+    rem = number % 10;
+    number = parseInt(number / 10);
+    console.log(number);
+    final = final * 10 + rem;
+}
+if (final == temp) {
+    console.log("it is palindrome");
+} else {
+    console.log("it is not a palindrome");
+}
+
+//Check Whether a Number is Prime or Not
+
+var n = 4,
+    i, flag = 0;
+for (i = 2; i <= n / 2; ++i) {
+    if (n % i == 0) {
+        flag = 1;
+        break;
+    }
+}
+if (flag == 0)
+    console.log("it is a prime number");
+else
+    console.log("it is not a prime number");
+
+//Display Prime Numbers Between Two Intervals
+
+var low = 3,
+    high = 10,
+    i, flag;
+while (low < high) {
+    flag = 0;
+    if (low <= 1) {
+        ++low;
+        continue;
+    }
+    for (i = 2; i <= low / 2; ++i) {
+
+        if (low % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0)
+        console.log("The prime numbers are ", low)
+        ++low;
+}
