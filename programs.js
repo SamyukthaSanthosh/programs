@@ -225,3 +225,45 @@ while (low < high) {
         console.log("The prime numbers are ", low)
         ++low;
 }
+
+//Display Factors of a Number
+
+var num = 100;
+for (var i = 1; i <= num; ++i) {
+    if (num % i == 0) {
+        console.log(i)
+    }
+}
+
+//Check Armstrong Number
+
+var n = 153;
+var r;
+var sum = 0;
+var temp;
+temp = n;
+while (n > 0) {
+    r = n % 10;
+    sum = sum + (r * r * r);
+    n = parseInt(n / 10);
+}
+if (temp == sum) {
+    console.log("It is an Armstrong number");
+} else {
+    console.log("It is not an Armstrong number");
+}
+
+//Find Largest Element in an Array
+
+function largest(arr) {
+    var i;
+    var max = arr[0];
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+
+    return max;
+}
+var arr = [10, 20, 40, 99, 200];
+console.log("Largest of the given array ", largest(arr))
